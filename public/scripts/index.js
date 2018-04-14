@@ -17,7 +17,7 @@ var sliderRestart = (function(){
 
 var sliderInit = (function(){
   $('.slider').slick({
-    vertical: true,
+    vertical: false,
     autoplay: true,
     infinite: true,
     autoplaySpeed: 3000,
@@ -39,8 +39,14 @@ window.onload = function() {
       console.log(winner);
 
       var lastWinner = $("#main-winner").text();
-      $("#main-winner").text(winner.name +' #'+ winner.number);
-      $('.slider').append("<label class='carousel winners'>" + lastWinner + "</label><br/>");
+
+      $("#main-winner").text(winner.name);
+      var parentWidth = $('#winners').width()
+      var winnerWidth = $('#main-winner').width()
+      var calculateWidth = (parentWidth - winnerWidth) /2
+      
+      $("#main-winner").css( 'padding-left', calculateWidth +'px' )
+      $('.slider').append("<label class='carousel winners'>" + lastWinner + "</label>");
 
       // countDown("21 february 2018 " + new Date().getHours() + ":" + (new Date().getMinutes()+1) + ":00");
       countDown(new Date(new Date().getTime() + FIFTEEN_MIN));

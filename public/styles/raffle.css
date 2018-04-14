@@ -27,6 +27,9 @@
   box-sizing: border-box;
 }
 
+#index {
+  background-color: #f3f3f3;
+}
 html
 {
   height: 100%;
@@ -49,6 +52,8 @@ body
   text-rendering: optimizeLegibility;
   vertical-align: baseline;
 }
+
+body#index .row { margin: 10px; }
 
 ::selection
 {
@@ -121,60 +126,32 @@ h3
 .colour1
 {
   background: #883fa0;
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
 }
 
 .colour2
 {
-  height: 500px !important;
-  background: #9c6bad;
+  min-height: 60px !important;
+  height: 100px !important;
+  background: #bebebf9c;
 }
 
 
-/* ==================================================
-   Separator Arrows
-================================================== */
-
-.arrow-separator
-{
-  position: relative;
+.winner-footer {
+  color: #983f78;
+  font-weight: bold;
+  font-style: italic;
+  margin: 0px !important;
+  width: 100% !important;
+  max-width: unset !important;
 }
 
-.arrow-separator:after
-{
-  top: 100%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-width: 12px;
-  left: 50%;
-  margin-left: -12px;
-  z-index: 11;
+.last-winners {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  color: #908d8d;
 }
 
-.arrow-white:after
-{
-  border-color: #FFF rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0); /** Using RGB to remove dark line in Firefox **/
-}
-
-.arrow-theme:after
-{
-  border-color: #883fa0 rgba(22,160,133,0) rgba(22,160,133,0) rgba(22,160,133,0);
-}
-
-.arrow-themelight:after
-{
-  border-color: #1ABC9C rgba(26,188,156,0) rgba(26,188,156,0) rgba(26,188,156,0);
-}
-
-.arrow-grey:after
-{
-  border-color: #EEE rgba(238,238,238,0) rgba(238,238,238,0) rgba(238,238,238,0);
-}
 
 /* ==================================================
    General Layout Styles
@@ -229,10 +206,13 @@ h3
     line-height: 90px;
     color: #1abc9c;
   }
-  
+
+#body.row { margin: 10px; } 
 #countdown
 {
-  color: #FFF;
+  color: #BEBEBF;
+  position: relative;
+  left: 20%
 }
 
   #countdown #countdowncont
@@ -242,6 +222,17 @@ h3
     margin: 0 auto;
   }
 
+  #countdown #countdowncont ul#countscript span {
+    font-family: 'neotech';
+    font-weight: 900;
+    color: #a8518a;
+  }
+
+    #countdown #countdowncont ul#countscript p {
+      color: #606062;
+    }
+  
+
     #countdown #countdowncont ul#countscript li
     {
       float: left;
@@ -249,20 +240,19 @@ h3
       padding: 30px 0;
       margin: 0;
       list-style-type: none;
-    }
+      text-align: center;    }
 
       #countdown #countdowncont ul#countscript li span
       {
         font-size: 140px;
         line-height: 80px;
         font-weight: 100;
-        color: #FFF;
+        
       }
 
       #countdown #countdowncont ul#countscript li p
       {
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: 300;
+        font-weight: bold;
         text-transform: uppercase;
         font-size: 30px;
         line-height: 18px;
@@ -275,13 +265,24 @@ h3
   src: url("fonts/candy/Ageta.otf");
 }
 
+@font-face{
+  font-family: 'neotech';
+  src: url("fonts/neotech/NeoTech.otf");
+}
+
 .main-winner {
-  font-size: 85px;
+  font-size: 50px;
+  font-family: 'neotech';
+  font-weight: bold;
+  font-style: italic;
+  position: absolute;
+  top: 45%;
 }
 
 #winners {
   font-family: 'candy';
   color: #FFF;
+  position: relative;
 }
 .winners {
   font-size: 65px;
@@ -426,6 +427,7 @@ h3
 
   body
   {
+    background-color: #f5f5f5;
     font-size: 23px;
     line-height: 29px;
   }
@@ -537,6 +539,15 @@ h3
     margin: 0 auto 20px auto;
     width: 100%;
   }
-  
 }
 
+img#footer-img {
+  position: fixed;
+  bottom: 0;
+}
+
+#gray-background {
+  width: 100%;
+  position: fixed;
+  bottom: 40px;
+}

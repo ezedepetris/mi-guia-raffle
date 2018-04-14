@@ -12,56 +12,58 @@
   <link rel="stylesheet" href="/styles/slick.css" type="text/css" /> 
 </head>
   <body id="index">
-  
-  <div class="fullwidth clearfix">
-    <div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-      <img src="/images/mi-guia.png" height="100" width="310">
-      <h1><span>Proximo sorteo en</span></h1>
-    </div>
-  </div>
-
-  <div class="arrow-separator arrow-white"></div>
-
-  <div class="fullwidth colour1 clearfix">
-    <div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-      <div id="countdowncont" class="clearfix">
-        <ul id="countscript">
-          <li>
-            <span class="hours">00</span>
-            <p class='timeRefHours'>Horas</p>
-          </li>
-          <li class="clearbox">
-            <span class="minutes">00</span>
-            <p class='timeRefMinutes'>Minutos</p>
-          </li>
-          <li>
-            <span class="seconds">00</span>
-            <p class='timeRefSeconds'>Segundos</p>
-          </li>
-        </ul>
+  <div class="row">
+    <div class="column">
+      <div class="fullwidth clearfix" style='padding-top: 53px; padding-bottom: 53px;'>
+        <div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+          <img src="/images/next_win.png" height="150" width="440">
+        </div>
       </div>
-    
+
+      <!-- <div class="fullwidth colour1 clearfix"> -->
+        <div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+
+          <div id="countdowncont" class="clearfix">
+            <ul id="countscript">
+              <li class="clearbox time">
+                <span class="minutes">00</span>
+                <p class='timeRefMinutes'>Minutos</p>
+              </li>
+              <li class="clearbox time">
+                <span class="seconds">00</span>
+                <p class='timeRefSeconds'>Segundos</p>
+              </li>
+            </ul>
+          </div>
+        
+        </div>
+
+        <div id="winners" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+          <img src="/images/winner.png" style="width: 100%;" alt="Flowers in Chania">
+          <label class="main-winner" id="main-winner"></label>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <div class="column">
+      <img src="/images/beer.gif" style="width: 100%;" alt="Flowers in Chania">
     </div>
   </div>
 
-  <div class="arrow-separator arrow-theme"></div>
 
-  <div class="fullwidth colour2 clearfix">
-    <div id="winners" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-      <h2>ganadores</h2>
-      <label class="main-winner" id="main-winner"><%= @winners.first.name %> <%= @winners.first.number %></label>
-      <label class="main-winner" id="main-winner"></label>
-    
+  <div class="colour2 clearfix" id="gray-background">
+    <label class='last-winners'>ganadores anteriores - ganadores anteriores - ganadores anteriores - ganadores anteriores - ganadores anteriores - ganadores</label>
+    <div class="bodycontainer winner-footer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
       <div class="slider">
         <% @winners.each_with_index do |winner, index| %>
           <% unless index.zero? %>
-            <label class="carousel winners"><%= winner.name %> #<%= winner.number %></label>
+            <label class="carousel winners"><%= winner.name %></label>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
+  <img src="/images/footer.png" style="width: 100%;" id="footer-img">
 
 </body>
 </html>
